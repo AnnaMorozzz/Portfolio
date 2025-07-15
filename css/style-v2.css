@@ -81,7 +81,11 @@ body, html {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 18px 0 18px;
+  padding: 10px 10px 0 10px;
+  background: var(--card-bg);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: var(--shadow);
 }
 .logo-v2 {
   font-size: 1.5rem;
@@ -95,10 +99,14 @@ body, html {
 }
 .nav-list-v2 {
   display: flex;
-  gap: 18px;
+  flex-direction: row;
+  gap: 12px;
   list-style: none;
   margin: 0;
   padding: 0;
+  background: none;
+  position: static;
+  box-shadow: none;
 }
 .nav-link-v2 {
   color: #fff;
@@ -114,39 +122,6 @@ body, html {
   background: linear-gradient(90deg, var(--accent1) 0%, var(--accent2) 100%);
   color: var(--bg-dark);
   box-shadow: 0 4px 16px 0 var(--accent2)55;
-}
-
-/* Бургер-меню */
-.burger-v2 {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 38px;
-  height: 38px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 100;
-  margin-left: 8px;
-}
-.burger-v2 span {
-  display: block;
-  width: 28px;
-  height: 4px;
-  margin: 3px 0;
-  background: var(--accent1);
-  border-radius: 2px;
-  transition: 0.3s;
-}
-.burger-v2.active span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-.burger-v2.active span:nth-child(2) {
-  opacity: 0;
-}
-.burger-v2.active span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* HERO */
@@ -431,30 +406,21 @@ h3 { font-size: 1.3rem; margin-bottom: 0.5em; color: #fbc2eb; }
   .nav-v2 { padding: 32px 16px 0 16px; }
 }
 @media (max-width: 900px) {
-  .burger-v2 { display: flex; }
+  .burger-v2 { display: none !important; }
   .nav-list-v2 {
-    position: fixed;
-    top: 0; right: 0;
-    height: 100vh;
-    width: 220px;
-    min-width: 180px;
-    max-width: 90vw;
-    box-sizing: border-box;
-    background: var(--card-bg);
-    box-shadow: -4px 0 24px 0 var(--accent1)22;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 80px 24px 24px 24px;
-    gap: 18px;
-    z-index: 99;
-    transform: translateX(100%);
-    transition: transform 0.35s cubic-bezier(.4,0,.2,1);
-    border-top-left-radius: 24px;
-    border-bottom-left-radius: 24px;
-    border-left: 2px solid var(--accent2)33;
-  }
-  .nav-list-v2.open {
-    transform: translateX(0);
+    display: flex;
+    position: static;
+    height: auto;
+    width: auto;
+    background: none;
+    box-shadow: none;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    gap: 12px;
+    transform: none;
+    border-radius: 0;
+    border: none;
   }
   .nav-link-v2 {
     font-size: 1.1rem;
@@ -470,16 +436,34 @@ h3 { font-size: 1.3rem; margin-bottom: 0.5em; color: #fbc2eb; }
   }
 }
 @media (min-width: 901px) {
-  .nav-list-v2 { display: flex !important; position: static; height: auto; width: auto; background: none; box-shadow: none; flex-direction: row; align-items: center; padding: 0; gap: 18px; transform: none; border-radius: 0; border: none; }
+  .nav-list-v2 {
+    display: flex !important;
+    position: static;
+    height: auto;
+    width: auto;
+    background: none;
+    box-shadow: none;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    gap: 12px;
+    transform: none;
+    border-radius: 0;
+    border: none;
+  }
   .burger-v2 { display: none !important; }
 }
 @media (max-width: 700px) {
   .section-v2, .card-v2 { padding: 8px 1vw; }
   .portfolio-v2 { gap: 8px; }
   .portfolio-card-v2 { width: 98vw; max-width: 340px; min-width: unset; }
-  .nav-list-v2 { gap: 4px; flex-wrap: wrap; }
-  .logo-v2 { font-size: 1rem; }
-  .nav-v2 { flex-direction: column; align-items: flex-start; padding: 18px 2vw 0 2vw; }
+  .nav-list-v2 { gap: 2px; flex-wrap: wrap; }
+  .logo-v2 { font-size: 1rem; margin-bottom: 2px; }
+  .nav-v2 {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 6px 2vw 0 2vw;
+  }
   .hero-content-v2 { flex-direction: column; gap: 8px; }
   .hero-photo-v2 img { width: 60px; height: 60px; }
   .hero-text-v2 h1 { font-size: 0.95rem; }
@@ -495,7 +479,7 @@ h3 { font-size: 1.3rem; margin-bottom: 0.5em; color: #fbc2eb; }
   .hero-text-v2 h1 { font-size: 0.8rem; }
   .main-btn-v2 { padding: 6px 4vw; font-size: 0.9rem; }
   .nav-list-v2 { flex-direction: column; gap: 2px; align-items: flex-start; }
-  .nav-v2 { padding: 12px 1vw 0 1vw; }
-  .logo-v2 { font-size: 0.7rem; }
+  .nav-v2 { padding: 4px 1vw 0 1vw; }
+  .logo-v2 { font-size: 0.8rem; }
   .footer-content-v2 { padding: 12px 0 6px 0; font-size: 0.9rem; }
 } 
