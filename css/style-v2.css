@@ -454,6 +454,9 @@ h3 { font-size: 1.3rem; margin-bottom: 0.5em; color: #fbc2eb; }
   .burger-v2 { display: none !important; }
 }
 @media (max-width: 700px) {
+  .nav-list-v2 {
+    display: none !important;
+  }
   .section-v2, .card-v2 { padding: 8px 1vw; }
   .portfolio-v2 { gap: 8px; }
   .portfolio-card-v2 { width: 98vw; max-width: 340px; min-width: unset; }
